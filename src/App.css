@@ -1,46 +1,120 @@
 body{
     font-family: sans-serif;
+    background-color: rgb(255, 249, 243);
+  }
+.container{
+    padding-top: 280px;
+}
+
+  .choice{
+    font-size:11px;
+    color: #dd7443;
+    font-weight: bold;
+    height: 20px;
   }
 
-.login-button{
+  /* Login */
+   .login-form{
+  width:40em;
+}
+.login-area{
+  display: flex;
+  justify-content: center;
+}
+
+  /* ProductDetail */
+
+  .product-detail-img{
+    display: flex;
+    justify-content: flex-end;
+  }
+  
+  .product-detail-img img{
+    width: 100%;
+    border-radius: 15px;
+  }
+  .product-info{
+    font-size: 20px;
+    margin-bottom: 10px;
+  }
+  .drop-down{
+    margin-top:20px;
+  }
+  .add-button{
+    margin-top:20px;
+    width: 100%;
+  }
+  
+
+  /* NaveBar */
+  .navBar{
+    background-color: rgba(255, 255, 255, 0.75);
+    margin-bottom: 50px;
+    position: fixed;
+    
+    z-index: 1000;
+    width: 100%;
+  }
+  .nav-header{
     display:flex;
     justify-content: space-between;
     align-items: center;
     margin-right: 20px;
-    cursor: pointer;
-}
-.login-button * {
+    
+  }
+  
+  .nav-header * {
     margin-right: 10px;
     margin-top: 20px;
-}
-
-.nav-section{
-    display: flex;
-    justify-content: center;
-    margin-bottom: 20px;
-}
-
-.menu-area{
-    display: flex;
-    justify-content: center;
-}
-
-.menu-list{
+  }
+  .menu{
     display: flex;
     list-style-type: none;
     padding: 20px;
-}
-.menu-list li a{
+  }
+  .menu li a{
     text-decoration: none;
     color:black;
     margin-left:20px;
+  }
+  
+  .nav-logo{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+  }
+  .nav-menu-area{
+      display: flex;
+      justify-content: center;
+    }
+.menu li a{
+        font-size: 20px;
 }
-
-.search-box{
+.burger-menu{
+    margin-left: 20px;
+  }
+  .hide{
+    visibility:hidden
+  }
+  
+  @media screen and (max-width: 63rem) {
+    .hide {
+      visibility:visible;
+    }
+    .menu {
+      display: none;
+    }
+    .search-box{
+      display: none;
+    }
+  }
+  .search-box{
     border-bottom: 1px solid black;
     position: absolute;
     right: 20px;
     padding: 5px;
+    width: 300px;
+    margin-right: 150px;
   }
   .search-box input{
     border:none;
@@ -49,13 +123,95 @@ body{
   .search-box input:focus {
     outline:none
   }
-
-.product-detail img{
-    /* padding-right: 70px; */
-    width: 380px;
-    border-radius: 10px;
-}
-.product-img{
+  
+  .side-menu {
+    height: 100%;
+    width: 250px;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: burlywood;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+    z-index:2
+  }
+  .side-menu-list button {
+    margin: 5px;
+    border: none;
+    background: none;
+    width: 120px;
+  }
+  
+  .side-menu .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+    border: none;
+    background: none;
+  }
+  
+  .side-menu-list {
     display: flex;
-    justify-content: flex-end;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .side-menu-list button:hover {
+    background-color: beige;
+    border-radius: 3px;
+  } 
+
+  /* ProductCard */
+  .card{
+    border:none !important;
+    margin-bottom: 10px;
+    padding: 10px;
+  }
+  .card img {
+    border-radius: 10px;
+  }
+  .card:hover{
+    transform: scale(1.1);
+    z-index: 1;
+  }
+  .new-product {
+    font-size: 11px;
+    height: 20px;
+    color: red;
+  }
+  /* Footer */
+  .footer{    
+    box-sizing: border-box;
+    height: 350px;
+    padding: 50px 20px 0px;
+    background-color: #8d8986;
+    margin-top: 80px;
 }
+    .f-box{
+        width: 700px;
+        margin: 0px auto;
+        margin-top: 30px;
+        color: rgb(255, 255, 255);
+    opacity: 0.8;
+    }
+    .f-box p{
+    line-height: 1.5;
+    letter-spacing: -0.04rem;
+    }
+    .f-site, .f-info{
+        font-weight: 600;
+        margin-bottom: 10px;
+    }
+    .f-img{
+        margin-top: 40px;
+        display: flex;
+justify-content: center;
+    }
+    .f-img img{
+    width: 100px;
+    height: auto;
+    }

@@ -1,47 +1,71 @@
-import React from "react";
+import React, { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUser, faHeart } from "@fortawesome/free-regular-svg-icons";
-import { faBasketShopping, faSearch } from "@fortawesome/free-solid-svg-icons";
-import { useNavigate } from "react-router-dom";
+import {
+  faBasketShopping,
+  faSearch,
+  faBars,
+} from "@fortawesome/free-solid-svg-icons";
+import { Link, useNavigate } from "react-router-dom";
 
-const Navbar = () => {
-  const menuList = ["Woman", "Men", "Baby", "Kids", "Home", "Sale"];
-  const navigate = useNavigate();
-  const goToLogin = () => {
-    navigate("/login");
-  };
-  const goToHome = () =>{
-    navigate("/")
-  }
-  const search = (event) => {
-    if(event.key === 'Enter'){
-      let keyword = event.target.value
-      navigate(`/?q=${keyword}`)
+const Navbar = ({ authenticate, setAuthenticate }) => {
+  const menuList = ["H&M HOME", "Woman", "Men", "Baby", "Kids", "Sport", "Sale", "지속가능성"];
+  let [width, setWidth] = useState(0);
+  let navigate = useNavigate();
+  const onCheckEnter = (event) => {
+    if (event.key === "Enter") {
+      navigate(`?q=${event.target.value}`);
     }
   };
+
   return (
-    <div>
-      <div>
-        <div className="login-button" onClick={goToLogin}>
-          <FontAwesomeIcon icon={faUser} />
-          <div>로그인</div>
-          <FontAwesomeIcon icon={faHeart} />
-          <div>즐겨찾기</div>
-          <FontAwesomeIcon icon={faBasketShopping} />
-          <div>장바구니</div>
+    <div className="navBar">
+      <div className="side-menu" style={{ width: width }}>
+        <button className="closebtn" onClick={() => setWidth(0)}>
+          &times;
+        </button>
+        <div className="side-menu-list" id="menu-list">
+          {menuList.map((menu, index) => (
+            <button key={index}>{menu}</button>
+          ))}
         </div>
       </div>
-      <div className="nav-section">
-        <img
-          width={100}
-          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTu33MvMQxzeLQWuQTeJbGoEUq_bsuAH1HMag&s"
-          alt="H&M"
-          onClick={goToHome}
-          style={{ cursor: 'pointer' }}
-        />
+
+      <div className="nav-header">
+        <div className="burger-menu hide">
+          <FontAwesomeIcon icon={faBars} onClick={() => setWidth(250)} />
+        </div>
+        {authenticate ? (
+          <div onClick={() => setAuthenticate(false)}>
+            <FontAwesomeIcon icon={faUser} />
+            <span style={{ cursor: "pointer" }}>로그아웃</span>
+            <FontAwesomeIcon icon={faHeart} />
+            <span style={{ cursor: "pointer" }}>즐겨찾기</span>
+            <FontAwesomeIcon icon={faBasketShopping} />
+            <span style={{ cursor: "pointer" }}>장바구니</span>
+          </div>
+        ) : (
+          <div onClick={() => navigate("/login")}>
+            <FontAwesomeIcon icon={faUser} />
+            <span style={{ cursor: "pointer" }}>로그인</span>
+            <FontAwesomeIcon icon={faHeart} />
+            <span style={{ cursor: "pointer" }}>즐겨찾기</span>
+            <FontAwesomeIcon icon={faBasketShopping} />
+            <span style={{ cursor: "pointer" }}>장바구니</span>
+          </div>
+        )}
       </div>
-      <div className="menu-area">
-        <ul className="menu-list">
+      <div className="nav-logo">
+        <Link to="/">
+          <img
+            width={100}
+            src="https://logos-world.net/wp-content/uploads/2020/04/HM-Logo-1999-present.jpg"
+          />
+        </Link>
+      </div>
+
+       <div class="nav-menu-area">
+        <ul className="menu">
           {menuList.map((menu, index) => (
             <li>
               <a href="#" key={index}>
@@ -50,9 +74,10 @@ const Navbar = () => {
             </li>
           ))}
         </ul>
-        <div className="search-box">
+
+       <div className="search-box">
           <FontAwesomeIcon icon={faSearch} />
-          <input type="text" placeholder="제품검색" onKeyPress={(event)=>search(event)} />
+          <input type="text" placeholder="Search" onKeyPress={onCheckEnter} />
         </div>
       </div>
     </div>
