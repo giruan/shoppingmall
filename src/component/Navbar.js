@@ -7,6 +7,7 @@ import {
   faBars,
 } from "@fortawesome/free-solid-svg-icons";
 import { Link, useNavigate } from "react-router-dom";
+import Hm from "../component/img/H&M.png"
 
 const Navbar = ({ authenticate, setAuthenticate }) => {
   const menuList = ["H&M HOME", "Woman", "Men", "Baby", "Kids", "Sport", "Sale", "지속가능성"];
@@ -59,7 +60,7 @@ const Navbar = ({ authenticate, setAuthenticate }) => {
         <Link to="/">
           <img
             width={100}
-            src="https://logos-world.net/wp-content/uploads/2020/04/HM-Logo-1999-present.jpg"
+            src={Hm}
           />
         </Link>
       </div>

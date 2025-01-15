@@ -91,8 +91,12 @@ body{
         font-size: 20px;
 }
 .burger-menu{
-    margin-left: 20px;
-  }
+  margin-left: 20px;
+}
+.burger-menu svg{
+  font-size: 20px;
+}
+
   .hide{
     visibility:hidden
   }
@@ -114,7 +118,13 @@ body{
     right: 20px;
     padding: 5px;
     width: 300px;
-    margin-right: 150px;
+    margin-right: 50px;
+  }
+
+  @media screen and (max-width:1500px) {
+    .search-box{
+      display: none;
+    }
   }
   .search-box input{
     border:none;
