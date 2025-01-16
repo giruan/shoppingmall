@@ -1,16 +1,16 @@
 {
   "files": {
     "main.css": "/shoppingmall/static/css/main.7e965aee.css",
-    "main.js": "/shoppingmall/static/js/main.40da675d.js",
+    "main.js": "/shoppingmall/static/js/main.9b80d8eb.js",
     "static/js/488.8a57cc85.chunk.js": "/shoppingmall/static/js/488.8a57cc85.chunk.js",
     "static/media/H&M.png": "/shoppingmall/static/media/H&M.71a045c627ed698b1de8.png",
     "index.html": "/shoppingmall/index.html",
     "main.7e965aee.css.map": "/shoppingmall/static/css/main.7e965aee.css.map",
-    "main.40da675d.js.map": "/shoppingmall/static/js/main.40da675d.js.map",
+    "main.9b80d8eb.js.map": "/shoppingmall/static/js/main.9b80d8eb.js.map",
     "488.8a57cc85.chunk.js.map": "/shoppingmall/static/js/488.8a57cc85.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.7e965aee.css",
-    "static/js/main.40da675d.js"
+    "static/js/main.9b80d8eb.js"
   ]
 }
